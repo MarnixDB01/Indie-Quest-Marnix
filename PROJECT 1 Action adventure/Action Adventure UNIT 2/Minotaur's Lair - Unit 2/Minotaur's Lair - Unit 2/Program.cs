@@ -58,9 +58,12 @@ namespace Minotaur_s_Lair___Unit_2
 
             Console.ReadKey(true);
         }
+        
+        //Method for drawing the map
         static void DrawMap(int width, int height)
         {
             var random = new Random();
+            //mapColor array same size as map
             var mapColor = new ConsoleColor[width, height];
 
             //sets console cursor position to 0, 0 (top left)
