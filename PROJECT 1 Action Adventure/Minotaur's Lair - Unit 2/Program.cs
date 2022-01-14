@@ -100,6 +100,8 @@ namespace Minotaur_s_Lair___Unit_2
                     //Setting player coordinates at startpoint when map[x, y] is at 'S'-"startpoint".
                     if (map[mazeX, mazeY] == 'S')
                     {
+                        //Set seperate player coordinates at startpoint.
+                        //This is needed because we use these seperately later with SetCursorPosition.
                         playerX = mazeX;
                         playerY = mazeY;
 
@@ -189,7 +191,7 @@ namespace Minotaur_s_Lair___Unit_2
                             playerX++;
                         }
                         break;
-                        //Ends game if Escape key is pressed.
+                    //Ends game if Escape key is pressed.
                     case ConsoleKey.Escape:
                         return;
                 }
