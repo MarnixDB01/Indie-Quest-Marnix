@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Country_capitals_quiz__Dictionaries____part_2</RootNamespace>
+    <AssemblyName>Country capitals quiz [Dictionaries] - part 2</AssemblyName>
+  </PropertyGroup>
+
+</Project>
