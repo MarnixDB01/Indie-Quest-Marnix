@@ -31,7 +31,7 @@ namespace Monster_Data
                 monsterEntries.Add(new MonsterEntry
                 {
                     Name = playerEntry,
-                    Description = playerEntryDescription
+                    Description = playerEntryDescription.
                 }); 
             }
         }
