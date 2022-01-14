@@ -20,19 +20,20 @@ namespace Monster_Data
             //list that reads the MonsterManual.txt and stores it inside the list.
             var monsterEntries = new List<string>(File.ReadAllLines("MonsterManual.txt"));
 
+
             var playerEntry = Console.ReadLine();
-            var playerEntryIndex = monsterEntries[monsterEntries.IndexOf(playerEntry)];
-            var playerEntryDescription = playerEntryIndex.Split(',');
+            var playerEntryDescriptionLine = monsterEntries[monsterEntries.IndexOf(playerEntry) + 1];
+            string[] playerEntryDescription = playerEntryDescriptionLine.Split(',');
 
             Console.Clear();
 
             if (monsterEntries.Contains(playerEntry))
             {
-                monsterEntries.Add(new MonsterEntry
-                {
-                    Name = playerEntry,
-                    Description = playerEntryDescription.
-                }); 
+
+            }
+            else
+            {
+
             }
         }
     }
