@@ -18,7 +18,6 @@ namespace Minotaur_s_Lair___Unit_2
         //Player coordinates & startpoint of maze.
         static int playerX;
         static int playerY;
-        static (int, int) playerPosition;
 
         static void Main(string[] args)
         {
@@ -104,9 +103,6 @@ namespace Minotaur_s_Lair___Unit_2
                         //This is needed because we use these seperately later with SetCursorPosition.
                         playerX = mazeX;
                         playerY = mazeY;
-
-                        //set player position based on player's X and Y value
-                        playerPosition = (playerX, playerY);
 
                         //setting player at startpoint to a smiley character.
                         map[playerX, playerY] = '☺';
