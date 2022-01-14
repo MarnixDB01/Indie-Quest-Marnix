@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generate characters, 5th edition", "Generate characters, 5th edition\Generate characters, 5th edition.csproj", "{F5C3A610-ED8F-4A66-AFDB-BCAD552C7EA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5C3A610-ED8F-4A66-AFDB-BCAD552C7EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C3A610-ED8F-4A66-AFDB-BCAD552C7EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C3A610-ED8F-4A66-AFDB-BCAD552C7EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C3A610-ED8F-4A66-AFDB-BCAD552C7EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13F852CE-F450-4035-AB18-CB39092CC815}
+	EndGlobalSection
+EndGlobal

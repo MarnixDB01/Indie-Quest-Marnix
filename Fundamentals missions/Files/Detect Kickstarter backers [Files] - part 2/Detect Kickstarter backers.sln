@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detect Kickstarter backers", "Detect Kickstarter backers\Detect Kickstarter backers.csproj", "{A69000B3-1201-46A0-BE13-B6236AE37042}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A69000B3-1201-46A0-BE13-B6236AE37042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69000B3-1201-46A0-BE13-B6236AE37042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69000B3-1201-46A0-BE13-B6236AE37042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69000B3-1201-46A0-BE13-B6236AE37042}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9ACE08D-8549-4D0A-B3ED-0C3BC9BB9D40}
+	EndGlobalSection
+EndGlobal

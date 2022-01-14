@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minotaur's lair - part 1", "Minotaur's lair - part 1\Minotaur's lair - part 1.csproj", "{DB04DA33-0EAD-4317-A118-90155EA8156D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB04DA33-0EAD-4317-A118-90155EA8156D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB04DA33-0EAD-4317-A118-90155EA8156D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB04DA33-0EAD-4317-A118-90155EA8156D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB04DA33-0EAD-4317-A118-90155EA8156D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FF2B9F8-47C1-4000-BCAF-300451211F05}
+	EndGlobalSection
+EndGlobal

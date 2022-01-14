@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling frame revised complete", "Bowling frame revised complete\Bowling frame revised complete.csproj", "{539A5E94-5DA0-4611-9543-7F0623A1EF48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{539A5E94-5DA0-4611-9543-7F0623A1EF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539A5E94-5DA0-4611-9543-7F0623A1EF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539A5E94-5DA0-4611-9543-7F0623A1EF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539A5E94-5DA0-4611-9543-7F0623A1EF48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B074DD9D-A708-48C5-961C-CCF8B05F3222}
+	EndGlobalSection
+EndGlobal

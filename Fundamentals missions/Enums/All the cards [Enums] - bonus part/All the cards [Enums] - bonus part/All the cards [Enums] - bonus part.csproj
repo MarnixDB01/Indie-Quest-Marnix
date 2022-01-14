@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>All_the_cards__Enums____bonus_part</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Card.txt" />
+    <None Remove="Cards.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Card.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cards.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

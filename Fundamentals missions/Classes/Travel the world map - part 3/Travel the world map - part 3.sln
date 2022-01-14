@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travel the world map - part 3", "Travel the world map - part 3\Travel the world map - part 3.csproj", "{12FD4014-C433-44B5-9849-8DA2AE13D053}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12FD4014-C433-44B5-9849-8DA2AE13D053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FD4014-C433-44B5-9849-8DA2AE13D053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FD4014-C433-44B5-9849-8DA2AE13D053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FD4014-C433-44B5-9849-8DA2AE13D053}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1596CA34-6EC1-47F5-9140-F0B8F2A0A1E5}
+	EndGlobalSection
+EndGlobal
