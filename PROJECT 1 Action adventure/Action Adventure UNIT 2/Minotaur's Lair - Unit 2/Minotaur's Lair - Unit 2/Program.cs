@@ -10,30 +10,36 @@ namespace Minotaur_s_Lair___Unit_2
         //width and height of the maze
         static int width;
         static int height;
-        //2d array of maze
-        static char[,] map;
 
-        static List<string> mazeList;
+        //2d array of current maze state
+        static char[,] map;
+        static ConsoleColor[,] mapColor;
+
+        //Original maze layout.
+        static List<string> originalMazeLayoutLines;
 
         //Player coordinates & startpoint of maze.
         static int playerX;
         static int playerY;
-        static (int, int) playerPosition;
 
         static void Main(string[] args)
         {
-            //Reads the file and makes it a string list.
-            mazeList = new List<string>(File.ReadAllLines("MazeLevel.txt"));
+            //Setup console defaults.
+            Console.CursorVisible = false;
 
-            //putting maze title from first line into a new string
-            string mazeTitle = mazeList[0];
-            //putting maze sizes from second line into a new string
-            string mazeSize = mazeList[1];
+            //Reads the file and makes it a string list.
+            originalMazeLayoutLines = new List<string>(File.ReadAllLines("MazeLevel.txt"));
+
+            //Putting maze title from first line into a new string.
+            string mazeTitle = originalMazeLayoutLines[0];
+
+            //Putting maze sizes from second line into a new string.
+            string mazeSize = originalMazeLayoutLines[1];
 
             //Removes mazeSize and mazeTitle lines.
             for (int removelineIndex = 0; removelineIndex < 2; removelineIndex++)
             {
-                mazeList.RemoveAt(0);
+                originalMazeLayoutLines.RemoveAt(0);
             }
 
             //Getting width and height values from the indexes of the mazeSize string ("39x21").
@@ -41,58 +47,58 @@ namespace Minotaur_s_Lair___Unit_2
             width = Convert.ToInt32((number[0]));
             height = Convert.ToInt32((number[1]));
 
-            //Main title screen
-            //Display welcome
-            //Add ReadKey so maze doesnt pop up instantly
-            //Clear so welcome message doesnt stay.
-            Console.CursorVisible = false;
+            //Setup the map including procedural data.
+            SetupLevel();
 
-            Console.WriteLine($"Get ready for: {mazeTitle}");
-            Console.WriteLine();
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-            Console.Clear();
+            //Main title screen.
+            DisplayTitleScreen(mazeTitle);
 
-            //Call DrawMap method
-            DrawMap(width, height);
+            //Start gameplay.
+            PlayLevel();
 
             Console.ReadKey(true);
         }
-        
-        //Method for drawing the map
-        static void DrawMap(int width, int height)
+
+        static void DisplayTitleScreen(string mazeTitle)
+        {
+            //Display welcome.
+            Console.WriteLine($"Get ready for: {mazeTitle}");
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+
+            //Add ReadKey so maze doesnt pop up instantly.
+            Console.ReadKey();
+
+            //Clear so welcome message doesnt stay.
+            Console.Clear();
+        }
+
+        static void SetupLevel()
         {
             var random = new Random();
-            //mapColor array same size as map
-            var mapColor = new ConsoleColor[width, height];
-
-            //sets console cursor position to 0, 0 (top left)
-            Console.SetCursorPosition(0, 0);
 
             //Creating 2d array from width and height previously extracted from the file.
             map = new char[width, height];
 
+            //mapColor array same size as map.
+            mapColor = new ConsoleColor[width, height];
 
-            //Inserting information from the text file "MazeLevel.txt" into the 2d char array.
+            //Inserting information from the original maze layout into the 2d map array.
             for (int mazeY = 0; mazeY < height; mazeY++)
             {
                 for (int mazeX = 0; mazeX < width; mazeX++)
                 {
-                    //Creating a new string every new Y line in the list
-                    //Creating a char list out of the line
-                    //List<char> mazeCurrentLineList = new List<char>(mazeCurrentLine);
-
-                    //Generating each X coordinate in the 2d char array as the char from the same X index as the array from the list
-                    map[mazeX, mazeY] = mazeList[mazeY][mazeX];
+                    //Generating each X coordinate in the 2d char array as the char from the same X index as the array from the list.
+                    map[mazeX, mazeY] = originalMazeLayoutLines[mazeY][mazeX];
                     mapColor[mazeX, mazeY] = ConsoleColor.Gray;
 
                     if (mazeY < 3)
                     {
-                        int treetype = random.Next(6);
+                        int treeChance = random.Next(6);
 
                         if (map[mazeX, mazeY] == ' ')
                         {
-                            if (treetype < 2)
+                            if (treeChance < 2)
                             {
                                 map[mazeX, mazeY] = '♠';
                                 mapColor[mazeX, mazeY] = ConsoleColor.DarkGreen;
@@ -106,15 +112,12 @@ namespace Minotaur_s_Lair___Unit_2
                         playerX = mazeX;
                         playerY = mazeY;
 
-                        //set player position based on player's X and Y value
-                        playerPosition = (playerX, playerY);
-
                         //setting player at startpoint to a smiley character.
                         map[playerX, playerY] = '☺';
                         mapColor[playerX, playerY] = ConsoleColor.DarkYellow;
 
                         //Replaces the S from the list to a space. Otherwise the S will remain on the map.
-                        mazeList[mazeY] = mazeList[mazeY].Replace("S", " ");
+                        originalMazeLayoutLines[mazeY] = originalMazeLayoutLines[mazeY].Replace("S", " ");
                     }
                     //Whenever x, y coordinates = M-"minotaur", make it the color Red
                     if (map[mazeX, mazeY] == 'M')
@@ -123,7 +126,10 @@ namespace Minotaur_s_Lair___Unit_2
                     }
                 }
             }
+        }
 
+        static void PlayLevel()
+        {
             //Drawing map
             for (int y = 0; y < height; y++)
             {
@@ -142,10 +148,22 @@ namespace Minotaur_s_Lair___Unit_2
 
                 Console.ForegroundColor = mapColor[playerX, playerY];
 
-                //Switch for deciding which key is pressed.
+
+
+                //Move player with the arrow keys.
+                void RemovePlayerFromCurrentPosition()
+                {
+                    //Writes out the char from the original list, which we previously put into the array. (2 lines above).
+                    map[playerX, playerY] = originalMazeLayoutLines[playerY][playerX];
+
+                    //sets cursor to X, Y location.
+                    Console.SetCursorPosition(playerX, playerY);
+
+                    //Writes out new data to the console.
+                    Console.Write(map[playerX, playerY]);
+                }
+
                 //Makes X, Y location in array original from mazeList on that X, Y location.
-                //sets cursor to X, Y location
-                //Writes out the char from the original list, which we previously put into the array. (2 lines above)
                 //Move playerX or Y coordinate to whichever directional arrow key was pressed.
                 switch (playerInput.Key)
                 {
@@ -153,9 +171,7 @@ namespace Minotaur_s_Lair___Unit_2
 
                         if (map[playerX, playerY - 1] == ' ' || map[playerX, playerY - 1] == 'M')
                         {
-                            map[playerX, playerY] = mazeList[playerY][playerX];
-                            Console.SetCursorPosition(playerX, playerY);
-                            Console.Write(map[playerX, playerY]);
+                            RemovePlayerFromCurrentPosition();
                             playerY--;
                         }
                         break;
@@ -164,9 +180,7 @@ namespace Minotaur_s_Lair___Unit_2
 
                         if (map[playerX, playerY + 1] == ' ' || map[playerX, playerY + 1] == 'M')
                         {
-                            map[playerX, playerY] = mazeList[playerY][playerX];
-                            Console.SetCursorPosition(playerX, playerY);
-                            Console.Write(map[playerX, playerY]);
+                            RemovePlayerFromCurrentPosition();
                             playerY++;
                         }
                         break;
@@ -175,9 +189,7 @@ namespace Minotaur_s_Lair___Unit_2
 
                         if (map[playerX - 1, playerY] == ' ' || map[playerX - 1, playerY] == 'M')
                         {
-                            map[playerX, playerY] = mazeList[playerY][playerX];
-                            Console.SetCursorPosition(playerX, playerY);
-                            Console.Write(map[playerX, playerY]);
+                            RemovePlayerFromCurrentPosition();
                             playerX--;
                         }
                         break;
@@ -186,30 +198,31 @@ namespace Minotaur_s_Lair___Unit_2
 
                         if (map[playerX + 1, playerY] == ' ' || map[playerX + 1, playerY] == 'M')
                         {
-                            map[playerX, playerY] = mazeList[playerY][playerX];
-                            Console.SetCursorPosition(playerX, playerY);
-                            Console.Write(map[playerX, playerY]);
+                            RemovePlayerFromCurrentPosition();
                             playerX++;
                         }
                         break;
-                        //Ends game if Escape key is pressed.
+                    //Ends game if Escape key is pressed.
                     case ConsoleKey.Escape:
                         return;
                 }
+                bool reachedMinotaur = map[playerX, playerY] == 'M';
+
+                //Set cursor to new X, Y position, which was changed in the switch above depending on which directional arrow key was pressed.
+                Console.SetCursorPosition(playerX, playerY);
+
+                //Generate smiley on the new cursor position.
+                map[playerX, playerY] = '☺';
+
+                //Make smiley char dark yellow color.
+                mapColor[playerX, playerY] = ConsoleColor.DarkYellow;
+
+                //Write out smiley in cursor position.
+                Console.Write(map[playerX, playerY]);
 
                 //Winning condition, if current location = M.. WIN!
-                if (map[playerX, playerY] == 'M')
+                if (reachedMinotaur)
                 {
-
-                    //Set cursor to new X, Y position, which was changed in the switch above depending on which directional arrow key was pressed.
-                    //Generate smiley on the new cursor position.
-                    //Make smiley char dark yellow color.
-                    //Write out smiley in cursor position.
-                    Console.SetCursorPosition(playerX, playerY);
-                    map[playerX, playerY] = '☺';
-                    mapColor[playerX, playerY] = ConsoleColor.DarkYellow;
-                    Console.Write(map[playerX, playerY]);
-
                     //Changes winning text to gray!
                     Console.ForegroundColor = ConsoleColor.Gray;
 
@@ -221,17 +234,6 @@ namespace Minotaur_s_Lair___Unit_2
                     Console.ReadKey();
                     break;
                 }
-
-                //Same as with the winning condition, but it happens even if not winning!
-                //--
-                //Set cursor to new X, Y position, which was changed in the switch above depending on which directional arrow key was pressed.
-                //Generate smiley on the new cursor position.
-                //Make smiley char dark yellow color.
-                //Write out smiley in cursor position.
-                Console.SetCursorPosition(playerX, playerY);
-                map[playerX, playerY] = '☺';
-                mapColor[playerX, playerY] = ConsoleColor.DarkYellow;
-                Console.Write(map[playerX, playerY]);
             }
         }
     }
