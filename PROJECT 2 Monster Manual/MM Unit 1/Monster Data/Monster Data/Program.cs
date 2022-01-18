@@ -19,28 +19,38 @@ namespace Monster_Data
         static void Main(string[] args)
         {
             //Reads the MonsterManual.txt and stores it inside the list.
-            var monsterEntriesReplacement = new List<string>(File.ReadAllLines("MonsterManual.txt"));
+            var monsterManualInfo = new List<string>(File.ReadAllLines("MonsterManual.txt"));
 
-            //Player entry
+            //Write out to console asking for player input.
+            Console.WriteLine("Please enter your desired monster name:");
+
+            //Player input.
             var playerEntry = Console.ReadLine();
+
+            //Clear console so it doesn't stay when writing info to console.
             Console.Clear();
 
             //Find index of descripion and alignment line from player entry (1 down from playerEntry).
             //Split the line so we can seperate the description and alignment
-            string[] playerEntryDescriptionLine = monsterEntriesReplacement[monsterEntriesReplacement.IndexOf(playerEntry) + 1].Split(',');
+            string[] playerEntryDescriptionLine = monsterManualInfo[monsterManualInfo.IndexOf(playerEntry) + 1].Split(',');
 
             //Specific strings for the description and alignment based on the index of the split string.
             string playerEntryDescription = playerEntryDescriptionLine[0];
             string playerEntryAlignment = playerEntryDescriptionLine[1];
 
             //Find index of hit points line from player entry (2 down from playerEntry).
-            string[]playerEntryHitPointsLine = monsterEntriesReplacement[monsterEntriesReplacement.IndexOf(playerEntry) + 2].Split(' ', '(', ')');
-            int playerHitPoints = Int32.Parse(playerEntryHitPointsLine[0]);
-            string playerHitPointsRoll = playerEntryHitPointsLine[1];
+            string[] playerEntryHitPointsLine = monsterManualInfo[monsterManualInfo.IndexOf(playerEntry) + 2].Split(' ');
+
+            //Parse player Hit Points and make it a seperate int.
+            int playerHitPoints = Int32.Parse(playerEntryHitPointsLine[2]);
+
+            //Make player Hit Points Roll a seperate string.
+            string playerHitPointsRoll = playerEntryHitPointsLine[3];
 
             var monsterEntries = new List<MonsterEntry>();
 
-            if (monsterEntriesReplacement.Contains(playerEntry))
+            //If playerEntry exists within the manual information
+            if (monsterManualInfo.Contains(playerEntry))
             {
                 //Store current information into a monsterEntries list.
                 monsterEntries.Add(new MonsterEntry
@@ -59,10 +69,12 @@ namespace Monster_Data
                 Console.WriteLine($"Description: {monsterEntries[0].Description}");
 
                 //Write current player entry alignment to console.
-                Console.WriteLine($"Alignment: {monsterEntries[0].Description}");
+                Console.WriteLine($"Alignment:{monsterEntries[0].Alignment}");
 
-                //Write current hit points player entry to console.
-                Console.WriteLine($"Hit points: {monsterEntries[0].HitPoints}");
+                //Write current hit points  player entry to console.
+                Console.WriteLine($"Hit points: {monsterEntries[0].HitPoints} {monsterEntries[0].HitPointsRoll}");
+
+                Console.ReadKey(true);
             }
         }
     }
