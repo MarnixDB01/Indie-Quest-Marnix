@@ -6,4 +6,14 @@
     <RootNamespace>Search_by_name</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="MonsterManual.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="MonsterManual.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
