@@ -49,9 +49,14 @@ namespace Monster_Data
 
             var monsterEntries = new List<MonsterEntry>();
 
-            //If playerEntry exists within the manual information
+            //If playerEntry exists within the manual.
             if (monsterManualInfo.Contains(playerEntry))
             {
+                foreach (string existingMonster in monsterManualInfo.Find(playerEntry))
+                {
+                    Console.WriteLine(existingMonster);
+                }
+
                 //Store current information into a monsterEntries list.
                 monsterEntries.Add(new MonsterEntry
                 {
@@ -61,6 +66,9 @@ namespace Monster_Data
                     HitPoints = playerHitPoints,
                     HitPointsRoll = playerHitPointsRoll
                 });
+
+
+
 
                 //Write current player entry name to console.
                 Console.WriteLine($"Name: {monsterEntries[0].Name}");
@@ -75,6 +83,11 @@ namespace Monster_Data
                 Console.WriteLine($"Hit points: {monsterEntries[0].HitPoints} {monsterEntries[0].HitPointsRoll}");
 
                 Console.ReadKey(true);
+            }
+            else
+            {
+                Console.WriteLine("No monsters were found. Try again:");
+                playerEntry = Console.ReadLine();
             }
         }
     }
