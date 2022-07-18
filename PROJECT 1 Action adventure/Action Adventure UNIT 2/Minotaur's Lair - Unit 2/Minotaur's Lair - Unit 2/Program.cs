@@ -148,8 +148,6 @@ namespace Minotaur_s_Lair___Unit_2
 
                 Console.ForegroundColor = mapColor[playerX, playerY];
 
-
-
                 //Move player with the arrow keys.
                 void RemovePlayerFromCurrentPosition()
                 {

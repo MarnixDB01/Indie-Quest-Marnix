@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Catalyst Dungeon", "The Catalyst Dungeon\The Catalyst Dungeon.csproj", "{5C2DB456-100A-42B8-A9A6-B5FBC902A984}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C2DB456-100A-42B8-A9A6-B5FBC902A984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2DB456-100A-42B8-A9A6-B5FBC902A984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2DB456-100A-42B8-A9A6-B5FBC902A984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2DB456-100A-42B8-A9A6-B5FBC902A984}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F838C29-FCE7-4C61-A618-60A21A213E77}
+	EndGlobalSection
+EndGlobal
