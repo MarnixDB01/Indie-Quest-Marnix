@@ -11,7 +11,7 @@ namespace Minotaur_s_Lair___Unit_2
         static int width;
         static int height;
 
-        //2d array of current maze state
+        //2d array of current maze state.
         static char[,] map;
         static ConsoleColor[,] mapColor;
 
