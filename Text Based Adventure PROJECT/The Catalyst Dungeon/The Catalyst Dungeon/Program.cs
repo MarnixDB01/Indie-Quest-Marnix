@@ -127,13 +127,13 @@ namespace The_Catalyst_Dungeon
             Console.WriteLine();
 
             Console.WriteLine("You see two pieces of equipment ontop of the cart.");
-            Console.WriteLine("An armorstand with a plate breastplate and a platinum longsword.");
+            Console.WriteLine("An armorstand with a plate bodyarmor and a platinum longsword.");
             Console.WriteLine();
 
             Console.WriteLine("'Which piece would you like to use, boy~?' he firmly asked.");
             Console.WriteLine("----------------------------------------");
 
-            Console.WriteLine("(1) Plate Breastplate [+10 HP]");
+            Console.WriteLine("(1) Plate Bodyarmor [+10 HP]");
             Console.WriteLine("(2) Platinum Longsword [+3 DMG]");
 
             //Depending on player choice between items, change the player stats accordingly.
