@@ -88,7 +88,7 @@ namespace The_Catalyst_Dungeon
             Console.WriteLine();
 
             Console.WriteLine("After a short sleep, you wake up and decide to walk outside.\nWhen you suddenly see a letter laying under your door.");
-            Console.WriteLine("When you pick up the letter, you notice that it has the post stamp of the Royal Palace. You immediately start reading it.");
+            Console.WriteLine("When you pick up the letter, you notice that it has the post stamp of the Royal Palace, you immediately start reading it.");
             Console.WriteLine();
 
             Console.WriteLine("'Dear hero...\nWe urge you to help our kingdom which is in great danger to a threat only you can eradicate!");
@@ -1206,10 +1206,10 @@ namespace The_Catalyst_Dungeon
                             //Case of block.
                             case ConsoleKey.B:
 
-                                int blockChanceRoll = random.Next(10);
+                                int blockChanceRoll = random.Next(6);
 
                                 //Successful block.
-                                if (blockChanceRoll > 4)
+                                if (blockChanceRoll > 2)
                                 {
                                     BlockAudio();
 
@@ -1225,7 +1225,7 @@ namespace The_Catalyst_Dungeon
                                 }
 
                                 //Unsuccessful block.
-                                else if (blockChanceRoll < 4)
+                                else if (blockChanceRoll < 3)
                                 {
                                     DamageTakenAudio();
 
@@ -1308,10 +1308,10 @@ namespace The_Catalyst_Dungeon
                             //Case of block.
                             case ConsoleKey.B:
 
-                                int blockChanceRoll = random.Next(10);
+                                int blockChanceRoll = random.Next(6);
 
                                 //successful block.
-                                if (blockChanceRoll > 4)
+                                if (blockChanceRoll > 2)
                                 {
                                     BlockAudio();
 
@@ -1327,7 +1327,7 @@ namespace The_Catalyst_Dungeon
                                 }
 
                                 //Unsuccessful block.
-                                else if (blockChanceRoll < 4)
+                                else if (blockChanceRoll < 3)
                                 {
                                     DamageTakenAudio();
 
@@ -1410,10 +1410,10 @@ namespace The_Catalyst_Dungeon
                             //Case of block.
                             case ConsoleKey.B:
 
-                                int blockChanceRoll = random.Next(10);
+                                int blockChanceRoll = random.Next(6);
 
                                 //Successful block.
-                                if (blockChanceRoll > 4)
+                                if (blockChanceRoll > 2)
                                 {
                                     BlockAudio();
 
@@ -1429,7 +1429,7 @@ namespace The_Catalyst_Dungeon
                                 }
 
                                 //Unsuccessful block.
-                                else if (blockChanceRoll < 4)
+                                else if (blockChanceRoll < 3)
                                 {
                                     DamageTakenAudio();
 
@@ -1514,10 +1514,10 @@ namespace The_Catalyst_Dungeon
                             //Case of block.
                             case ConsoleKey.B:
 
-                                int blockChanceRoll = random.Next(10);
+                                int blockChanceRoll = random.Next(6);
 
                                 //Successful block.
-                                if (blockChanceRoll > 4)
+                                if (blockChanceRoll > 2)
                                 {
                                     BlockAudio();
 
@@ -1533,7 +1533,7 @@ namespace The_Catalyst_Dungeon
                                 }
 
                                 //Unsuccessful block.
-                                else if (blockChanceRoll < 4)
+                                else if (blockChanceRoll < 3)
                                 {
                                     DamageTakenAudio();
 
